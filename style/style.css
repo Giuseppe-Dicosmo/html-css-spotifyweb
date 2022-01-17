@@ -13,32 +13,69 @@ body{
 
 main{
   height: 100vh;
+  background-color: #141922;
   display: flex;
   flex-direction: row;
-  background-color: #141922;
-  flex-grow: 1;
 }
 
-aside{
-  background-color: black;
-  padding: 50px;
+ul{
+  list-style-type: none;
+  color: #a3a3a3;
 }
 
 img{
   max-width: 100%;
 }
 
-/* ----------------------------------------------
-                     toolbar
-   ---------------------------------------------- */
+/* *----------------------------------------------
+                    !navbar
+   *---------------------------------------------- */
+aside.navbar{
+  background-color: black;
+  width: 250px;
+  padding: 0 10px;
+}
+
+.logo-spotify{
+  width: 70%;
+}
+
+/* *----------------------------------------------
+              !servizio a pagamento
+   *---------------------------------------------- */
+.container-upgrade{
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 88px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.upgrade{
+  padding: 0 10px;
+  position: fixed;
+  z-index: 1;
+}
+
+.upgrade section{
+  color: white;
+  border:1px solid white ;
+  border-radius: 30px;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* *----------------------------------------------
+                    !toolbar
+   *---------------------------------------------- */
 footer.toolbar{
   background-color: #282828;
   height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
-
 }
 footer.toolbar > div {
   /* border: 1px solid white; */
@@ -68,12 +105,12 @@ footer.toolbar > div:nth-child(2) {
 
 .nome-album h1{
   color: white;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .nome-album p{
   color: #878787;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .nome-album p:hover{
