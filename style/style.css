@@ -68,8 +68,17 @@ footer.toolbar > div {
   font-size: 10px;
 }
 
+.nome-album p:hover{
+  color: white;
+  text-decoration: underline;
+}
+
 .like{
   color: #878787;
+}
+
+.like i:hover{
+  color: white;
 }
 
 .like i:first-child{
@@ -85,18 +94,23 @@ footer.toolbar > div {
 }
 
 .brano-icons{
-  border: 1px solid fuchsia;
+  /* border: 1px solid fuchsia; */
   display: flex;
   align-items: center;
   gap: 25px;
 }
 
 .brano-icons i:nth-child(3){
-  font-size: 25px;
+  font-size: 30px;
+  transition: 0.5s;
+}
+
+.brano-icons i:nth-child(3):hover{
+  font-size: 35px;
 }
 
 .durata-brano{
-  border:1px solid greenyellow;
+  /* border:1px solid greenyellow; */
   display: flex;
   align-items: center;
   gap: 35px;
@@ -110,8 +124,22 @@ footer.toolbar > div {
 }
 
 .scorrimento-brano{
-  border-radius: 15px;
   width: 150px;
   height: 100%;
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.durata-brano:hover .scorrimento-brano{
+  background-color: #86bc2b;
+}
+
+.durata-brano:hover .scorrimento-brano::after{
+  content: "";
+  padding: 0px 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  left: 95%;
+  bottom: 100%;
 }
