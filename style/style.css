@@ -76,3 +76,42 @@ footer.toolbar > div {
   margin-right: 10px;
 }
 
+.brano{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.brano-icons{
+  border: 1px solid fuchsia;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.brano-icons i:nth-child(3){
+  font-size: 25px;
+}
+
+.durata-brano{
+  border:1px solid greenyellow;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.barra-brano{
+  border-radius: 15px;
+  width: 500px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scorrimento-brano{
+  border-radius: 15px;
+  width: 150px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
