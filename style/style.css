@@ -23,6 +23,10 @@ ul{
   color: #a3a3a3;
 }
 
+li{
+  cursor: pointer;
+}
+
 img{
   max-width: 100%;
 }
@@ -62,7 +66,11 @@ nav li{
   gap: 10px;
 }
 
-nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
+nav li:hover,
+nav li.active,
+.playlist li:hover,
+.account li:hover,
+.account li.active{
   font-weight: bold;
   color: white;
 }
@@ -74,7 +82,7 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
 .playlist h2{
   color: white;
   font-size: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -91,7 +99,6 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
 }
 
 .logo-playlist{
-  color: #838383;
   font-size: 40px;
 }
 
@@ -110,7 +117,7 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
 }
 
 .account li:first-child{
-  border-bottom: 1px solid #838383;
+  border-bottom: 1px solid #a3a3a3;
   padding-bottom: 10px;
 }
 
@@ -121,15 +128,21 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
 .logo-download{
   display: flex;
   align-items: center;
-  width: 25px;
+  width: 20px;
 }
 
 .account .logo-icon{
-  background-color: #a3a3a3;
+  background-color: #808080;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.container{
+  flex-grow: 1;
+  overflow-y: auto;
+  position: relative;
 }
 
 /* *----------------------------------------------
@@ -139,11 +152,13 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 88px;
-  padding: 0 10px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 1;
 }
 
 .upgrade{
@@ -153,7 +168,33 @@ nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
   padding: 15px 40px;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
+  transition: 1s;
 }
+
+.upgrade:hover{
+  transform: scale(1.1);
+}
+
+/* *----------------------------------------------
+                !container-album
+   *---------------------------------------------- */
+  article{
+    margin-top: 110px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
 
 /* *----------------------------------------------
                     !toolbar
@@ -207,6 +248,7 @@ footer.toolbar > div:nth-child(2) {
 .nome-album p:hover{
   color: white;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .like{
@@ -216,6 +258,7 @@ footer.toolbar > div:nth-child(2) {
 
 .like i:hover{
   color: white;
+  cursor: pointer;
 }
 
 .like i:first-child{
@@ -228,6 +271,7 @@ footer.toolbar > div:nth-child(2) {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
 }
 
 .brano-icons{
@@ -235,6 +279,11 @@ footer.toolbar > div:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 25px;
+  cursor: pointer;
+}
+
+.brano-icons i{
+  cursor: pointer;
 }
 
 .brano-icons i:nth-child(3){
@@ -259,6 +308,7 @@ footer.toolbar > div:nth-child(2) {
   width: 500px;
   height: 5px;
   background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
 
 .scorrimento-brano{
@@ -293,6 +343,7 @@ footer.toolbar > div:nth-child(2) {
 
 .volume i{
   color: white;
+  cursor: pointer;
 }
 
 .volume .barra-brano{
