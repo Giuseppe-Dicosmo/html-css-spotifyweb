@@ -34,13 +34,18 @@ aside.navbar{
   background-color: black;
   width: 250px;
   padding: 0 15px;
-  overflow: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
 }
 
 .logo-spotify{
-  width: 70%;
+  width: 150px;
   margin: 20px 0;
 }
+
 nav{
   margin-bottom: 25px;
 }
@@ -57,7 +62,7 @@ nav li{
   gap: 10px;
 }
 
-nav li:hover, nav li.active{
+nav li:hover, nav li.active, .playlist li:hover, .account li:hover{
   font-weight: bold;
   color: white;
 }
@@ -66,13 +71,10 @@ nav li:hover, nav li.active{
   width: 25px;
 }
 
-.playlist{
-  overflow-y: visible;
-}
-
 .playlist h2{
   color: white;
   font-size: 15px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -82,22 +84,52 @@ nav li:hover, nav li.active{
   gap: 15px;
 }
 
-.logo-playlist  li{
+.playlist li{
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
 .logo-playlist{
-  width: 10px;
-  font-weight: bold;
-  color: black;
-  background-color: #838383;
+  color: #838383;
+  font-size: 40px;
+}
+
+.container-account{
+  margin-bottom: 100px;
+}
+
+.account {
+  width: 100%;
+}
+
+.account li{
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 30px;
+  gap: 10px;
+}
+
+.account li:first-child{
+  border-bottom: 1px solid #838383;
+  padding-bottom: 10px;
+}
+
+.account li:last-child{
+  padding-top: 10px;
+}
+
+.logo-download{
+  display: flex;
+  align-items: center;
+  width: 25px;
+}
+
+.account .logo-icon{
+  background-color: #a3a3a3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 /* *----------------------------------------------
@@ -123,8 +155,6 @@ nav li:hover, nav li.active{
   font-weight: bold;
 }
 
-
-
 /* *----------------------------------------------
                     !toolbar
    *---------------------------------------------- */
@@ -134,9 +164,12 @@ footer.toolbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
 footer.toolbar > div {
-  /* border: 1px solid white; */
   overflow: hidden;
   padding: 0 5px;
 }
@@ -199,7 +232,6 @@ footer.toolbar > div:nth-child(2) {
 
 .brano-icons{
   overflow: hidden;
-  /* border: 1px solid fuchsia; */
   display: flex;
   align-items: center;
   gap: 25px;
@@ -215,7 +247,6 @@ footer.toolbar > div:nth-child(2) {
 }
 
 .durata-brano{
-  /* border:1px solid greenyellow; */
   width: 100%;
   display: flex;
   justify-content: center;
