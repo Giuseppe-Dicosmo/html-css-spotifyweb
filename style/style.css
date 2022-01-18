@@ -196,6 +196,28 @@ nav li.active,
     text-transform: uppercase;
   }
 
+  .menu li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu li::after{
+    content: "";
+    height: 0;
+    width: 0;
+    transition: all 0.2s linear;
+  }
+
+  .menu li:hover::after, .menu li.active::after{
+    content: "";
+    background-color: #adff2f;
+    border-radius: 15px;
+    height: 3px;
+    width: 30px;
+    margin-top: 5px;
+  }
+
 /* *----------------------------------------------
                     !toolbar
    *---------------------------------------------- */
