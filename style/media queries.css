@@ -1,0 +1,96 @@
+@media screen and (max-width: 1025px) {
+  .container-album li{
+    width: calc((100% / 4) - 15px);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .container-album li{
+    width: calc((100% / 2) - 15px);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  aside.navbar{
+    flex-basis: 50px;
+    flex-shrink: 0;
+    padding: 5px 0;
+  }
+
+  .logo-icon.mobile{
+    display: block;
+  }
+
+  nav, .account ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav{
+    flex-grow: 1;
+    gap: 20px;
+  }
+
+  .logo-icon {
+    width: 2.5em;
+  }
+
+  .logo-spotify, .navbar li div:last-child{
+    display: none;
+  }
+
+  .account li:first-child{
+    border-bottom: none;
+  }
+
+  .playlist{
+    display: none;
+  }
+
+  .container-upgrade{
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 321px){
+  .container-album li{
+    width: calc((100% / 1) - 15px);
+  }
+
+  .container-upgrade{
+    justify-content: center;
+  }
+
+  .upgrade{
+    font-size: 13px;
+    padding: 10px 35px;
+  }
+
+  .autore{
+    height: 100%;
+    width: 100%;
+    justify-content:space-between;
+  }
+
+  .album{
+    width: 70px;
+    flex-shrink: 0;
+  }
+
+  .nome-album h1{
+    font-size: 20px;
+  }
+
+  .nome-album p{
+    font-size: 15px;
+  }
+
+  .like{
+    font-size: 25px;
+  }
+
+  .brano, .volume{
+    display: none;
+  }
+}

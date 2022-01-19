@@ -53,6 +53,10 @@ aside.navbar{
   margin: 20px 0;
 }
 
+.logo-icon.mobile{
+  display: none;
+}
+
 nav{
   margin-bottom: 25px;
 }
@@ -91,7 +95,7 @@ nav li.active,
   margin: 15px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px 10px;
 }
 
 .playlist div:hover{
@@ -210,7 +214,8 @@ nav li.active,
 
   .menu ul{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
     gap: 30px;
     font-size: 15px;
     text-transform: uppercase;
@@ -236,7 +241,7 @@ nav li.active,
 
   .menu li:hover::after, .menu li.active::after{
     content: "";
-    background-color: #1db954;
+    background-color: #1ed760;
     border-radius: 15px;
     height: 3px;
     width: 30px;
@@ -308,167 +313,158 @@ nav li.active,
 /* *----------------------------------------------
                     !toolbar
    *---------------------------------------------- */
-footer.toolbar{
-  background-color: #282828;
-  height: 85px;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  bottom: 0;
-}
+  footer.toolbar{
+    background-color: #282828;
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-footer.toolbar > div {
-  display: flex;
-  align-items: center;
-  padding: 0 5px;
-  border: 1px solid springgreen;
-  flex-grow: 1;
-  /* overflow: hidden; */
-}
+  footer.toolbar > div {
+    padding: 0 5px;
+    overflow: hidden;
+  }
 
-footer.toolbar > div:nth-child(1), footer.toolbar > div:nth-child(3) {
-  /* width: 20%; */
-  overflow: hidden;
-}
+  footer.toolbar > div:nth-child(2) {
+    width: 55%;
+  }
 
-footer.toolbar > div:nth-child(2) {
-  /* width: 60%; */
-}
+  .autore{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
 
-.autore{
-  gap: 10px;
-}
+  .album{
+    width: 40px;
+    flex-shrink: 0;
+  }
 
-.album{
-  width: 40px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
+  .nome-album{
+    padding-right: 20px;
+  }
+
+  .nome-album h1{
+    color: white;
+    font-size: 18px;
+  }
+
+  .nome-album p{
+    color: #878787;
+    font-size: 13px;
+  }
+
+  .nome-album p:hover{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .like{
+    color: #878787;
+  }
+
+  .like i:hover{
+    color: white;
+    cursor: pointer;
+  }
+
+  .like i:first-child{
+    margin-right: 10px;
+  }
+
+  .brano{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+  .brano-icons{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+  }
+
+  .brano-icons i{
+    cursor: pointer;
+  }
+
+  .brano-icons i:nth-child(3){
+    font-size: 30px;
+    transition: 0.5s;
+  }
+
+  .brano-icons i:nth-child(3):hover{
+    font-size: 35px;
+  }
+
+  .durata-brano{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .barra-brano{
+    border-radius: 15px;
+    flex-grow: 1;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+  .scorrimento-brano{
+    width: 30%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: relative;
+  }
+
+  .durata-brano:hover .scorrimento-brano,
+  .volume:hover .scorrimento-brano{
+    background-color: #1ed760;
+  }
+
+  .durata-brano:hover .scorrimento,
+  .volume:hover .scorrimento{
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    right: -5px;
+  }
 
 
-.nome-album{
-  padding-right: 20px;
-}
+  .volume{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
 
-.nome-album h1{
-  color: white;
-  font-size: 18px;
-}
+  .volume i{
+    color: white;
+    cursor: pointer;
+  }
 
-.nome-album p{
-  color: #878787;
-  font-size: 12px;
-}
+  .volume .barra-brano{
+    width: 100px;
+  }
 
-.nome-album p:hover{
-  color: white;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.like{
-  color: #878787;
-}
-
-.like i:hover{
-  color: white;
-  cursor: pointer;
-}
-
-.like i:first-child{
-  margin-right: 10px;
-}
-
-.brano{
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-}
-
-.brano-icons{
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  cursor: pointer;
-  border: 1px solid chocolate;
-}
-
-.brano-icons i{
-  cursor: pointer;
-}
-
-.brano-icons i:nth-child(3){
-  font-size: 30px;
-  transition: 0.3s;
-}
-
-.brano-icons i:nth-child(3):hover{
-  font-size: 35px;
-}
-
-.durata-brano{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.barra-brano{
-  border-radius: 15px;
-  width: 500px;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-
-.scorrimento-brano{
-  width: 30%;
-  height: 100%;
-  border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.6);
-  position: relative;
-}
-
-.durata-brano:hover .scorrimento-brano,
-.volume:hover .scorrimento-brano{
-  background-color: #1db954;
-}
-
-.durata-brano:hover .scorrimento,
-.volume:hover .scorrimento{
-  width: 13px;
-  height: 13px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: -4px;
-  right: -5px;
-}
-
-.volume{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 20px;
-}
-
-.volume i{
-  color: white;
-  cursor: pointer;
-}
-
-.volume .barra-brano{
-  width: 100px;
-}
-
-.volume .scorrimento-brano{
-  width: 30%;
-}
+  .volume .scorrimento-brano{
+    width: 30%;
+  }
