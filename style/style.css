@@ -9,7 +9,7 @@ body{
   display: flex;
   flex-direction: column;
 
-  /* font */
+  /* *font */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -39,14 +39,13 @@ img{
    *---------------------------------------------- */
 aside.navbar{
   background-color: black;
-  padding: 0 15px;
-  height: 100vh;
+  padding: 5px 15px;
+  height: calc(100vh - 85px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-basis: 230px;
   flex-shrink: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .logo-spotify{
@@ -83,10 +82,26 @@ nav li.active,
   width: 25px;
 }
 
+.playlist{
+  display: contents;
+}
+
+.playlist  .button{
+  color: #a3a3a3;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playlist div:hover{
+  color: white;
+  cursor: pointer;
+}
+
 .playlist h2{
   color: white;
   font-size: 15px;
-  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -94,12 +109,11 @@ nav li.active,
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
 .playlist li{
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .logo-playlist{
@@ -272,7 +286,7 @@ nav li.active,
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 100px
+    font-size: 5em;
   }
 
   .container-album h3{
@@ -296,35 +310,45 @@ nav li.active,
    *---------------------------------------------- */
 footer.toolbar{
   background-color: #282828;
-  height: 88px;
+  height: 85px;
+  width: 100%;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  z-index: 1;
 }
 
 footer.toolbar > div {
-  overflow: hidden;
+  display: flex;
+  align-items: center;
   padding: 0 5px;
+  border: 1px solid springgreen;
+  flex-grow: 1;
+  /* overflow: hidden; */
+}
+
+footer.toolbar > div:nth-child(1), footer.toolbar > div:nth-child(3) {
+  /* width: 20%; */
+  overflow: hidden;
 }
 
 footer.toolbar > div:nth-child(2) {
-  width: 60%;
+  /* width: 60%; */
 }
 
 .autore{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   gap: 10px;
 }
 
 .album{
   width: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
+
 
 .nome-album{
   padding-right: 20px;
@@ -337,7 +361,7 @@ footer.toolbar > div:nth-child(2) {
 
 .nome-album p{
   color: #878787;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .nome-album p:hover{
@@ -348,7 +372,6 @@ footer.toolbar > div:nth-child(2) {
 
 .like{
   color: #878787;
-
 }
 
 .like i:hover{
@@ -370,11 +393,11 @@ footer.toolbar > div:nth-child(2) {
 }
 
 .brano-icons{
-  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 25px;
   cursor: pointer;
+  border: 1px solid chocolate;
 }
 
 .brano-icons i{
@@ -383,7 +406,7 @@ footer.toolbar > div:nth-child(2) {
 
 .brano-icons i:nth-child(3){
   font-size: 30px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .brano-icons i:nth-child(3):hover{
@@ -395,7 +418,7 @@ footer.toolbar > div:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 20px;
 }
 
 .barra-brano{
@@ -435,7 +458,6 @@ footer.toolbar > div:nth-child(2) {
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
-  height: 30px;
 }
 
 .volume i{
