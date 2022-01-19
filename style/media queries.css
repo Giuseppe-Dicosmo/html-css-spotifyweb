@@ -8,6 +8,11 @@
   .container-album li{
     width: calc((100% / 2) - 15px);
   }
+
+  .upgrade{
+    font-size: 13px;
+    padding: 10px 35px;
+  }
 }
 
 @media screen and (max-width: 426px) {
@@ -40,6 +45,10 @@
     display: none;
   }
 
+  nav li::before{
+    display: none;
+  }
+
   .account li:first-child{
     border-bottom: none;
   }
@@ -60,11 +69,6 @@
 
   .container-upgrade{
     justify-content: center;
-  }
-
-  .upgrade{
-    font-size: 13px;
-    padding: 10px 35px;
   }
 
   .autore{

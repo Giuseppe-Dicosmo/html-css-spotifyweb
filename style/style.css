@@ -71,6 +71,11 @@ nav li{
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+}
+
+.logo-icon{
+  width: 25px;
 }
 
 nav li:hover,
@@ -82,8 +87,23 @@ nav li.active,
   color: white;
 }
 
-.logo-icon{
-  width: 25px;
+nav li::before{
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -15px;
+  transition: height 0.2s linear;
+}
+
+nav li:hover::before, nav li.active::before{
+  content: "";
+  background-color: #1ed760;
+  border-radius: 15px;
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  left: -15px;
 }
 
 .playlist{
@@ -226,9 +246,11 @@ nav li.active,
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .menu li:hover, .menu li.active{
+    font-weight: bold;
     color: white;
   }
 
@@ -236,7 +258,7 @@ nav li.active,
     content: "";
     height: 0;
     width: 0;
-    transition: all 0.2s linear;
+    transition: width 0.3s linear;
   }
 
   .menu li:hover::after, .menu li.active::after{
@@ -245,7 +267,8 @@ nav li.active,
     border-radius: 15px;
     height: 3px;
     width: 30px;
-    margin-top: 5px;
+    position: absolute;
+    bottom: -5px;
   }
 
   .container-album{
