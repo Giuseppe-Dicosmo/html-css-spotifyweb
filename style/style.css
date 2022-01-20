@@ -31,7 +31,7 @@ li{
 }
 
 img{
-  max-width: 100%;
+  width: 100%;
 }
 
 /* *----------------------------------------------
@@ -129,6 +129,19 @@ nav li:hover::before, nav li.active::before{
   text-transform: uppercase;
 }
 
+.playlist ul::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.playlist ul::-webkit-scrollbar-track {
+  background-color: #1ed760;
+}
+
+.playlist ul::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 15px;
+}
+
 .playlist ul{
   display: flex;
   flex-direction: column;
@@ -187,6 +200,19 @@ nav li:hover::before, nav li.active::before{
   position: relative;
 }
 
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 15px;
+}
+
 /* *----------------------------------------------
               !servizio a pagamento
    *---------------------------------------------- */
@@ -212,7 +238,7 @@ nav li:hover::before, nav li.active::before{
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  transition: 1s;
+  transition: all 1s;
 }
 
 .upgrade:hover{
@@ -244,7 +270,6 @@ nav li:hover::before, nav li.active::before{
   .menu li{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
   }
@@ -283,12 +308,12 @@ nav li:hover::before, nav li.active::before{
   .container-album ul{
     display: flex;
     flex-flow: row wrap;
-    gap: 15px;
+    gap: 1%;
     margin: 40px 0 100px 0;
   }
 
   .container-album li{
-    width: calc((100% / 6) - 15px);
+    width: calc(95% / 6);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -314,7 +339,7 @@ nav li:hover::before, nav li.active::before{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 5em;
+    font-size: min(70px,4vw);
   }
 
   .container-album h3{
@@ -349,27 +374,26 @@ nav li:hover::before, nav li.active::before{
 
   footer.toolbar > div {
     padding: 0 5px;
-    overflow: hidden;
-  }
-
-  footer.toolbar > div:nth-child(2) {
-    width: 55%;
   }
 
   .autore{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 5px;
+    flex-basis: 250px;
+  }
+
+  .container-brano{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
   }
 
   .album{
-    width: 40px;
+    width: 50px;
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
-  }
-
-  .nome-album{
-    padding-right: 20px;
   }
 
   .nome-album h1{
@@ -407,11 +431,10 @@ nav li:hover::before, nav li.active::before{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    flex-basis: 50%;
   }
 
   .brano-icons{
-    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -436,7 +459,7 @@ nav li:hover::before, nav li.active::before{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 20px;
   }
 
   .barra-brano{
@@ -445,6 +468,7 @@ nav li:hover::before, nav li.active::before{
     height: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
+    position: relative;
   }
 
   .scorrimento-brano{
@@ -452,7 +476,6 @@ nav li:hover::before, nav li.active::before{
     height: 100%;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.6);
-    position: relative;
   }
 
   .durata-brano:hover .scorrimento-brano,
@@ -464,11 +487,12 @@ nav li:hover::before, nav li.active::before{
   .volume:hover .scorrimento{
     width: 13px;
     height: 13px;
-    background-color: white;
     border-radius: 50%;
+    background-color: white;
     position: absolute;
-    top: -4px;
-    right: -5px;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%) ;
   }
 
 
@@ -476,6 +500,7 @@ nav li:hover::before, nav li.active::before{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-basis: 250px;
     gap: 20px;
   }
 
@@ -485,7 +510,7 @@ nav li:hover::before, nav li.active::before{
   }
 
   .volume .barra-brano{
-    width: 100px;
+    flex-grow: 1;
   }
 
   .volume .scorrimento-brano{
